@@ -8,6 +8,10 @@ const users = [
   { name: "charlie", age: 28, email: "charlie@example.com" },
 ];
 
+app.get("/", (req, res) => {
+  res.send("Hi Kalvium!! My project is working fine");
+});
+
 app.get("/user", (req, res) => {
   try {
     const name = req.query.name;
@@ -20,7 +24,7 @@ app.get("/user", (req, res) => {
     if (user) {
       return res.status(200).json({
         message: "User found",
-        data: { name: user.name, age: user.age, email: user.email },
+        data: { name: user.name, age: user.age, email: xuser.email },
       });
     } else {
       return res.status(403).json({ message: "User not found" });
